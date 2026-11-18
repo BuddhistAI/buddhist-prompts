@@ -21,6 +21,8 @@ Nothing here has a score. When a task has a benchmark, its skills are measured i
 
 To change or remove your entry or your picture later, comment on your issue. A maintainer does it, usually within a few days. If you share a link, say if you want us to keep a copy here (copied at one commit, recorded in `SOURCE.md`; to update it, open a new Share issue) or only list it with a link to your repo.
 
+You can follow your share on the [Prompt library board](https://github.com/orgs/BuddhistAI/projects/4): New, Reviewing, Listed.
+
 A maintainer adds your entry here and credits you on the [contributors list](https://buddhistai.github.io/#people). GitHub sends you a message when it is added. Is it a skill for a task that has a benchmark? A maintainer also adds it to that task's repo so it can be scored, with your name.
 
 **Keep it in your own repo?** Share the link and we list it with a card, so people find it here. Your repo stays the source.
@@ -78,6 +80,8 @@ Grouped by kind. Some entries are kept here; others stay in the author's own rep
 The daily contributors job on the homepage reads `authors`, `github` and `avatar` from every `CARD.md` here, so the author appears in the contributors list after the merge.
 
 If a shared skill is for a task that has a benchmark, also copy it as a variant into that task's workshop repo (for example [toc-extraction-tibetan](https://github.com/BuddhistAI/toc-extraction-tibetan)) so it can be measured. If the task has no workshop repo yet, keep it here and note it on the task's card on the [Skills board](https://github.com/orgs/BuddhistAI/projects/1).
+
+Every Share issue is added to the [Prompt library board](https://github.com/orgs/BuddhistAI/projects/4) on its own. Move it to Reviewing while you work on it, then Listed after the merge.
 
 ## License
 
