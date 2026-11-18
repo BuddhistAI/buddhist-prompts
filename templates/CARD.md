@@ -2,6 +2,8 @@
 title: Short name people will recognise
 kind: skill              # skill, workflow, prompt, personal, project-instructions, style-guide, glossary or other
 file: SKILL.md           # the shared file in this folder; skill, workflow and prompt may leave it out (SKILL.md, WORKFLOW.md, PROMPT.md)
+link: https://...         # instead of file: when the file stays in the author's own repo or page (we only list it)
+summary: One short sentence for the list in README.md
 topic: translation       # same as the folder name's first part
 language: pali           # source language, from languages.json
 target-language: english # only for tasks that produce another language; otherwise delete this line

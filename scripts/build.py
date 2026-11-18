@@ -5,25 +5,36 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import ROOT, collect_entries  # noqa: E402
+from lib import KIND_GROUPS, ROOT, collect_entries  # noqa: E402
 
-LABELS = {"skill": "Skill", "workflow": "Workflow", "prompt": "Prompt", "personal": "Personal AI file",
-          "project-instructions": "Project instructions", "style-guide": "Style guide", "glossary": "Glossary", "other": "Other"}
 START, END = "<!-- index:start -->", "<!-- index:end -->"
+
+
+def item(e):
+    c = e["card"] or {}
+    lang = (e["language"] or "any").replace("-", " ").title()
+    if e["target"] and e["target"] != "INVALID":
+        lang += " → " + e["target"].replace("-", " ").title()
+    title = c.get("title") or e["name"]
+    where = f"[{title}](./{e['path']}/CARD.md)"
+    if c.get("link"):
+        where += f" ([source]({c['link']}))"
+    summary = f": {c['summary']}" if c.get("summary") else ""
+    return f"- {where}{summary} By {c.get('authors', '?')}. {lang}. {c.get('license', '')}".rstrip()
 
 
 def index():
     entries = collect_entries()
     if not entries:
         return "_Nothing shared yet. Be the first!_"
-    lines = ["| Entry | Kind | Language | Topic | By | Version |", "| --- | --- | --- | --- | --- | --- |"]
+    by_kind = {}
     for e in entries:
-        c = e["card"] or {}
-        lang = (e["language"] or "any").replace("-", " ").title()
-        if e["target"] and e["target"] != "INVALID":
-            lang += " → " + e["target"].replace("-", " ").title()
-        lines.append(f"| [{c.get('title') or e['name']}](./{e['path']}/CARD.md) | {LABELS.get(c.get('kind', ''), c.get('kind', ''))} | {lang} | {e['topic']} | {c.get('authors', '')} | {c.get('version', '')} |")
-    return "\n".join(lines)
+        by_kind.setdefault((e["card"] or {}).get("kind", "other"), []).append(e)
+    lines = []
+    for kind, heading in KIND_GROUPS:
+        if kind in by_kind:
+            lines += [f"### {heading}", ""] + [item(e) for e in by_kind[kind]] + [""]
+    return "\n".join(lines).rstrip()
 
 
 def build():

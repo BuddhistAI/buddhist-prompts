@@ -31,5 +31,7 @@ EGM artifact directory: docs/designs
 - Copy shared files unchanged. Write `SOURCE.md` with the link, author, date and license. Files under another license keep it.
 - Credit the author in `authors`, and set `github` and `avatar` when known: the homepage contributors job reads them.
 - Language names come from buddhist-skills `languages.json`. One language per entry.
-- Never hand-edit the list between the `index` markers in README.md. Run `python3 scripts/build.py`, then `python3 scripts/check.py`.
+- README.md is a catalog grouped by kind. Never hand-edit the list between the `index` markers: the `catalog` Action rebuilds it on every push (locally: `python3 scripts/build.py`, then `python3 scripts/check.py`).
+- An entry kept in the author's own repo has `link:` instead of `file:` in CARD.md; we only list it. Give every card a one-sentence `summary`.
+- Later: submit this library to the big "awesome" lists (for example awesome-claude-code) so people find it.
 - Nothing here is measured or installed as a plugin. Skills for a task with a benchmark are measured in their task repo; the winners go to buddhist-skills.

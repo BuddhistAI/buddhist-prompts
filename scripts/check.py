@@ -45,7 +45,10 @@ for e in entries:
     if c.get("version") and not SEMVER_RE.match(c["version"]):
         errors.append(f"{where}/CARD.md: version must be semver, e.g. 0.1.0")
     folder = Path(__file__).resolve().parent.parent / where
-    if c.get("file"):
+    if c.get("link") and not c.get("file"):
+        if not c["link"].startswith("https://"):
+            errors.append(f"{where}/CARD.md: link must start with https://")
+    elif c.get("file"):
         if not (folder / c["file"]).is_file():
             errors.append(f"{where}/CARD.md: file {c['file']!r} is not in this folder")
     elif kind in KIND_FILES:

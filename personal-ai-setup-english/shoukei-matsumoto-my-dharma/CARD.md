@@ -2,6 +2,7 @@
 title: my-dharma.md (Shoukei Matsumoto's version)
 kind: personal
 file: my-dharma.md
+summary: A practitioner's own reading of the Dharma, given to the AI he works with, so both act under it.
 topic: personal-ai-setup
 language: english
 authors: Shoukei Matsumoto

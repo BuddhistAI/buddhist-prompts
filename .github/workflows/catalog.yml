@@ -1,0 +1,28 @@
+name: catalog
+
+# Rebuilds the list of entries in README.md from the CARD.md files on every push to main,
+# and commits it if it changed. Nobody needs to edit the list by hand.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/build.py
+      - name: Commit the list if it changed
+        run: |
+          if git diff --quiet README.md; then echo "List is current"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Rebuild the list of entries"
+          git push

@@ -1,5 +1,5 @@
 name: Share your files
-description: Share a skill or any file you give to AI, such as a Claude file, project instructions, a style guide, a glossary or a prompt. Paste a link or upload your files. No git or code needed. You need a free GitHub account.
+description: Share a skill or any file you give to AI, such as a Claude file, project instructions, a style guide, a glossary or a prompt. Paste a link or upload your files. No git or code needed. You need a free GitHub account (github.com/signup).
 title: "Share: "
 labels: [community-share]
 body:
@@ -14,9 +14,11 @@ body:
         1. **Paste a link** to your GitHub repo or folder, or
         2. **Upload your files**: drag them into the box below.
 
+        To change or remove your entry or your picture later, comment on this issue. A maintainer does it, usually within a few days.
+
         A maintainer adds your entry to the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library) and credits you. GitHub sends you a message when it is added, with a link. Your name and picture appear on the [contributors list](https://buddhistai.github.io/#people). Is it a skill for a task that has a benchmark? A maintainer also adds it to that task's repo so it can be scored, with your name. Only share material you are free to share (see the [code of conduct](https://github.com/BuddhistAI/buddhist-prompt-library/blob/main/CODE_OF_CONDUCT.md)).
   - type: input
-    id: title
+    id: name
     attributes:
       label: A short name for your file
       description: A name people will recognise.
@@ -40,7 +42,7 @@ body:
     id: language
     attributes:
       label: Language
-      description: One language per entry. For translation, give both.
+      description: One language per entry. For translation, give both. If it is not for one Buddhist language, give the language it is written in.
       placeholder: Tibetan → English
     validations: {required: true}
   - type: textarea

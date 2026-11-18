@@ -10,6 +10,17 @@ LANGUAGES_URL = "https://raw.githubusercontent.com/BuddhistAI/buddhist-skills/ma
 NOT_ENTRIES = {"scripts", "templates", "docs"}
 # Kind -> the standard file it must have. Other kinds name their file with `file:` in CARD.md.
 KIND_FILES = {"skill": "SKILL.md", "workflow": "WORKFLOW.md", "prompt": "PROMPT.md"}
+# Catalog order and headings in README.md.
+KIND_GROUPS = [
+    ("personal", "Personal AI files (CLAUDE.md and similar)"),
+    ("project-instructions", "Project instructions"),
+    ("style-guide", "Style guides"),
+    ("glossary", "Glossaries"),
+    ("prompt", "Prompts"),
+    ("skill", "Skills (no score yet)"),
+    ("workflow", "Workflows"),
+    ("other", "Other"),
+]
 KINDS = {"skill", "workflow", "prompt", "personal", "project-instructions", "style-guide", "glossary", "other"}
 
 
