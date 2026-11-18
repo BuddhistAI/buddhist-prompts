@@ -15,7 +15,7 @@ Nothing here has a score. When a task has a benchmark, its skills are measured i
 
 ## Share yours
 
-**No git needed:** open the [Share your files](https://github.com/BuddhistAI/buddhist-prompt-library/issues/new?template=share.yml) form. Paste a link, or drag your files into the form. You need a free GitHub account ([make one](https://github.com/signup)). Your name and picture are optional.
+**No git needed:** open the [Share your files](https://github.com/BuddhistAI/buddhist-prompts/issues/new?template=share.yml) form. Paste a link, or drag your files into the form. You need a free GitHub account ([make one](https://github.com/signup)). Your name and picture are optional.
 
 **The form is public at once**, before anyone reviews it. Do not upload private or restricted material.
 
