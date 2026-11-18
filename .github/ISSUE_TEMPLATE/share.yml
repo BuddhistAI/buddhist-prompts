@@ -1,0 +1,96 @@
+name: Share your files
+description: Share a skill or any file you give to AI, such as a Claude file, project instructions, a style guide, a glossary or a prompt. Paste a link or upload your files. No git or code needed. You need a free GitHub account.
+title: "Share: "
+labels: [community-share]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for sharing! Share a skill or any file you give to AI: a Claude file, project instructions, a style guide, a glossary or a prompt.
+
+        **Everything in this form is public at once**, before anyone reviews it. Do not upload private or restricted material.
+
+        There are two ways:
+        1. **Paste a link** to your GitHub repo or folder, or
+        2. **Upload your files**: drag them into the box below.
+
+        A maintainer adds your entry to the [prompt library](https://github.com/BuddhistAI/buddhist-prompt-library) and credits you. GitHub sends you a message when it is added, with a link. Your name and picture appear on the [contributors list](https://buddhistai.github.io/#people). Is it a skill for a task that has a benchmark? A maintainer also adds it to that task's repo so it can be scored, with your name. Only share material you are free to share (see the [code of conduct](https://github.com/BuddhistAI/buddhist-prompt-library/blob/main/CODE_OF_CONDUCT.md)).
+  - type: input
+    id: title
+    attributes:
+      label: A short name for your file
+      description: A name people will recognise.
+      placeholder: Translation style of Khenpo X
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it?
+      options:
+        - A personal AI file (like CLAUDE.md or ChatGPT custom instructions)
+        - Project instructions (from a Claude Project or a custom GPT)
+        - A style guide
+        - A glossary
+        - A prompt
+        - A skill (SKILL.md)
+        - A workflow (several steps)
+        - Other
+    validations: {required: true}
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: One language per entry. For translation, give both.
+      placeholder: Tibetan → English
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it do, and who is it for?
+      placeholder: It describes how my teacher speaks, so the AI keeps his style when I translate his talks.
+    validations: {required: true}
+  - type: input
+    id: link
+    attributes:
+      label: "Way 1: link to your GitHub repo or folder"
+      description: Leave empty if you upload files below.
+      placeholder: https://github.com/you/your-skill
+  - type: textarea
+    id: files
+    attributes:
+      label: "Way 2: your files"
+      description: Drag and drop your files here (.md, .txt, .zip, .pdf, .docx). If GitHub refuses a file, put it in a .zip. You can also paste the text.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else? (optional)
+      description: A short example, the AI models you used it with, or what it gets wrong.
+  - type: input
+    id: credit
+    attributes:
+      label: Your name (optional)
+      description: How we credit you. Leave empty and we use your GitHub name.
+      placeholder: Your Name (Your Organization)
+  - type: textarea
+    id: avatar
+    attributes:
+      label: Your picture (optional)
+      description: Drop a photo or logo here, or paste a link to one. Leave empty and we use your GitHub picture.
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: How others may use it. MIT and CC0 let anyone use it freely.
+      options:
+        - MIT (anyone may use it; keep my name)
+        - CC0 (public domain)
+        - CC BY 4.0 (anyone may use it; credit me)
+        - Other (say which in "Anything else?")
+    validations: {required: true}
+  - type: checkboxes
+    id: free
+    attributes:
+      label: Permission
+      options:
+        - label: I made this or I am free to share it.
+          required: true

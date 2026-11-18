@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question or discuss an idea
+    url: https://github.com/orgs/BuddhistAI/discussions
+    about: Ask which AI works best for your task, share what you made, or talk about your language.
+  - name: Ask for an AI solution for a task
+    url: https://github.com/BuddhistAI/buddhist-skills/issues/new?template=request.yml
+    about: Tell us a Buddhist task that has no good AI solution yet.

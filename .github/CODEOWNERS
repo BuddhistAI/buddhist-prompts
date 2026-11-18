@@ -1,0 +1,7 @@
+# Default owner for everything.
+*                               @ngawangtrinley
+
+# Language owners review entries for their language.
+# Replace with a team (for example @BuddhistAI/tibetan) once it exists.
+/*-tibetan/                     @ngawangtrinley
+/*-tibetan-to-*/                @ngawangtrinley
